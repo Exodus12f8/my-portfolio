@@ -282,6 +282,22 @@
     .toast-t{font-family:'Anton',sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--red);font-size:.95rem}
     .toast-d{color:var(--muted);font-size:.85rem;margin-top:3px}
 
+    /* ───── INTRO ───── */
+    .intro{position:fixed;inset:0;z-index:9999;background:var(--black);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(14px,3vw,26px)}
+    .intro.done{animation:introOut .7s var(--ease) forwards;pointer-events:none}
+    @keyframes introOut{to{opacity:0;transform:scale(1.06);visibility:hidden}}
+    .intro-logo{position:relative;font-family:'Anton',sans-serif;font-size:clamp(3rem,14vw,10rem);line-height:1;text-transform:uppercase;letter-spacing:.04em;animation:introLogoIn .6s var(--ease) both}
+    @keyframes introLogoIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+    .intro-outline{display:block;color:transparent;-webkit-text-stroke:2px rgba(229,9,20,.5)}
+    .intro-fill{position:absolute;inset:0;display:block;color:#fff;text-shadow:0 0 34px rgba(229,9,20,.6);clip-path:inset(0 100% 0 0);animation:introFill 1.6s var(--ease) .4s forwards}
+    .intro-fill .i-red{color:var(--red)}
+    @keyframes introFill{to{clip-path:inset(0 0 0 0)}}
+    .intro-bar{position:absolute;top:-7%;bottom:-7%;left:0;width:4px;background:var(--red);box-shadow:0 0 26px 7px rgba(229,9,20,.85);opacity:0;animation:introBar 1.6s var(--ease) .4s forwards}
+    @keyframes introBar{0%{left:0;opacity:0}8%{opacity:1}92%{opacity:1}100%{left:100%;opacity:0}}
+    .intro-sub{font-family:'Manrope',sans-serif;font-size:clamp(.7rem,2vw,1rem);letter-spacing:.42em;text-transform:uppercase;color:var(--muted-2);font-weight:700;opacity:0;animation:introSub .8s var(--ease) 1.75s forwards}
+    @keyframes introSub{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    @media(prefers-reduced-motion:reduce){.intro{display:none!important}}
+
     /* ───── REVEAL ───── */
     .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
     .reveal.visible{opacity:1;transform:none}
@@ -294,6 +310,16 @@
   </style>
 </head>
 <body>
+  <!-- INTRO -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro-logo">
+      <span class="intro-outline">EXODUSF8</span>
+      <span class="intro-fill">EXODUS<span class="i-red">F8</span></span>
+      <span class="intro-bar"></span>
+    </div>
+    <div class="intro-sub">Roblox Systems Studio</div>
+  </div>
+
   <!-- NAV -->
   <nav id="nav">
     <div class="nav-inner">
@@ -727,6 +753,21 @@
     });
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
     window.addEventListener('resize', () => { if(window.innerWidth>=860) closeMenu(); });
+
+    /* ───── INTRO ───── */
+    (function(){
+      const intro = document.getElementById('intro');
+      if(!intro) return;
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(reduce){ intro.remove(); return; }
+      document.documentElement.style.overflow = 'hidden';
+      function endIntro(){
+        intro.classList.add('done');
+        document.documentElement.style.overflow = '';
+        setTimeout(() => { if(intro && intro.parentNode) intro.remove(); }, 800);
+      }
+      setTimeout(endIntro, 2700);
+    })();
 
     /* ───── REVEAL ───── */
     const io = new IntersectionObserver(entries => {
