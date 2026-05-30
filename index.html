@@ -331,7 +331,7 @@
           <span class="dot"></span>
           <span class="small">Roblox Systems Studio</span>
         </div>
-        <h1 class="hero-title">SHIP <span class="stroke">SYSTEMS</span><br/>THAT SCALE</h1>
+        <h1 class="hero-title">EXODUS<span class="stroke">F8</span></h1>
         <div class="hero-meta">
           <span class="match">98% Match</span>
           <span>2026</span>
@@ -414,7 +414,7 @@
             </div>
             <div class="est-field">
               <label>Complexity / Scope <span class="val" id="scope-val">Medium</span></label>
-              <input type="range" id="scope" min="1" max="5" step="1" value="2" />
+              <input type="range" id="scope" min="1" max="7" step="1" value="3" />
             </div>
             <div class="est-field">
               <label>Add-ons <span class="val" id="addon-val">0 selected</span></label>
@@ -507,28 +507,22 @@
   <script>
     /* ───── DATA ───── */
     const WORK = {
-      "Combat & Abilities": [
-        { id:"UsqTtrUZg1A", title:"Gun Framework", tag:"Framework", desc:"Modular gun framework with server-validated firing, recoil, spread, reload states and per-weapon configs. Drop new guns in without touching core logic." },
-        { id:"7oXFKr7aSWY", title:"Projectile System", tag:"Ability", desc:"Fireball projectile ability with custom VFX, server-validated hit detection and impact effects on contact." },
-        { id:"TtRUGvyL_qw", title:"Gravity Pull Ability", tag:"Ability", desc:"Physics combat ability that pulls nearby players or objects toward a target point. Server-validated with client-side prediction for snappy feel." }
-      ],
-      "UI & Interface": [
-        { id:"yio2sEKvxG0", title:"3D Hotbar", tag:"UI", desc:"Cartoony 3D hotbar for items with smooth selection and slot animations." },
-        { id:"Z75WkTEb01I", title:"3D Horror Main Menu", tag:"UI", desc:"Atmospheric 3D main menu with customizable background music and moody lighting." }
-      ],
       "Core Systems": [
         { id:"T_odMpCE69g", title:"Inventory System", tag:"System", desc:"Categorised inventory — each slot is type-locked so shirts go in shirt slots, weapons in weapon slots, etc. Full drag-and-drop with validation." },
         { id:"Qbl2wr_xLnw", title:"Movement System", tag:"System", desc:"Smooth animations with camera bobbing, a first-person view model and buttery shiftlock." },
         { id:"KZaGAI2Krtg", title:"Vault System", tag:"System", desc:"Clean vault-over-walls mechanic with configurable vault height and speed." }
+      ],
+      "Combat & Abilities": [
+        { id:"UsqTtrUZg1A", title:"Gun Framework", tag:"Framework", desc:"Modular gun framework with server-validated firing, recoil, spread, reload states and per-weapon configs. Drop new guns in without touching core logic." },
+        { id:"7oXFKr7aSWY", title:"Projectile System", tag:"Ability", desc:"Fireball projectile ability with custom VFX, server-validated hit detection and impact effects on contact." }
       ],
       "Admin & Tools": [
         { id:"H1m-YQsI29w", title:"CMDR — Global Messages", tag:"Admin", desc:"Custom CMDR command broadcasting global messages to every server via MessagingService. Supports formatting and admin-level permissions." }
       ]
     };
     const ROW_SUBS = {
-      "Combat & Abilities":"Guns · VFX · server-validated hitboxes",
-      "UI & Interface":"HUDs · menus · animated 3D interfaces",
       "Core Systems":"Inventory · movement · mechanics",
+      "Combat & Abilities":"Guns · VFX · server-validated hitboxes",
       "Admin & Tools":"Moderation · anti-exploit · commands"
     };
 
@@ -543,9 +537,9 @@
 
     const PLANS = [
       { name:"Module", forw:"Single feature / bug fix", gbp:50, usd:65, feats:["One feature or module","Bug fixes & patches","Standalone scripts","Quick turnaround"], featured:false },
-      { name:"Standard System", forw:"Combat · UI · backend", gbp:120, usd:156, feats:["A complete system","Server-validated logic","Revisions included","Clean documentation"], featured:true },
-      { name:"Complex Build", forw:"Multi-system jobs", gbp:300, usd:390, feats:["Multiple linked systems","Advanced architecture","Performance tuning","Priority support"], featured:false },
-      { name:"Full Experience", forw:"Full game / retainer", gbp:750, usd:975, feats:["End-to-end game build","Ongoing retainer option","Framework & tooling","1k+ CCU ready"], featured:false }
+      { name:"Standard System", forw:"Combat · UI · backend", gbp:150, usd:195, feats:["A complete system","Server-validated logic","Revisions included","Clean documentation"], featured:true },
+      { name:"Complex Build", forw:"Multi-system jobs", gbp:400, usd:520, feats:["Multiple linked systems","Advanced architecture","Performance tuning","Priority support"], featured:false },
+      { name:"Full Experience", forw:"Full game / retainer", gbp:1000, usd:1300, feats:["End-to-end game build","Ongoing retainer option","Framework & tooling","1k+ CCU ready"], featured:false }
     ];
 
     const FAQ = [
@@ -653,20 +647,24 @@
     /* ───── ESTIMATOR ───── */
     const TYPES = [
       { name:"Module", base:50 },
-      { name:"Standard System", base:120 },
-      { name:"Complex Build", base:300 },
-      { name:"Full Experience", base:750 }
+      { name:"Standard System", base:150 },
+      { name:"Complex Build", base:400 },
+      { name:"Full Experience", base:1000 }
     ];
-    const SCOPE_MULT = { 1:0.8, 2:1, 3:1.5, 4:2.2, 5:3.2 };
-    const SCOPE_LABEL = { 1:"Small", 2:"Medium", 3:"Large", 4:"Heavy", 5:"Massive" };
+    const SCOPE_MULT = { 1:0.7, 2:1, 3:1.5, 4:2.2, 5:3.2, 6:4.5, 7:6 };
+    const SCOPE_LABEL = { 1:"Tiny", 2:"Small", 3:"Medium", 4:"Large", 5:"Heavy", 6:"Massive", 7:"Enormous" };
     const ADDONS = [
-      { name:"VFX Pass", v:40 },
-      { name:"Mobile Support", v:35 },
-      { name:"Anti-Exploit", v:60 },
-      { name:"Documentation", v:25 },
-      { name:"Source Comments", v:20 }
+      { name:"VFX Pass", v:60 },
+      { name:"Mobile Support", v:50 },
+      { name:"Anti-Exploit", v:90 },
+      { name:"Documentation", v:35 },
+      { name:"Source Comments", v:25 },
+      { name:"GamePass / Monetization", v:70 },
+      { name:"Data Saving (ProfileStore)", v:80 },
+      { name:"Discord Webhooks", v:40 },
+      { name:"Rush Delivery", v:120 }
     ];
-    let selType = 1, selScope = 2, selAddons = new Set();
+    let selType = 1, selScope = 3, selAddons = new Set();
 
     const typeChips = document.getElementById('type-chips');
     TYPES.forEach((t,i) => {
