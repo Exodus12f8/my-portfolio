@@ -1,7 +1,7 @@
 import { projects, categories } from "../data/projects.js";
 import { openVideo } from "./video-dialog.js";
 
-function thumbnailFor(videoId) {
+export function thumbnailFor(videoId) {
   const img = document.createElement("img");
   img.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
   img.alt = "";
@@ -17,17 +17,22 @@ function thumbnailFor(videoId) {
   return img;
 }
 
-function createTile(project) {
+const PLAY_ICON =
+  '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg>';
+
+function createTile(project, index) {
   const tile = document.createElement("button");
   tile.type = "button";
   tile.className = "project";
+  tile.style.setProperty("--i", index);
   tile.setAttribute("aria-label", `Play video: ${project.title}`);
 
-  const thumb = document.createElement("div");
-  thumb.className = "project-thumb";
-  thumb.append(thumbnailFor(project.videoId));
+  const play = document.createElement("span");
+  play.className = "project-play";
+  play.innerHTML = PLAY_ICON;
 
-  const text = document.createElement("div");
+  const body = document.createElement("div");
+  body.className = "project-body";
 
   const type = document.createElement("p");
   type.className = "project-type";
@@ -40,8 +45,8 @@ function createTile(project) {
   desc.className = "project-desc";
   desc.textContent = project.description;
 
-  text.append(type, heading, desc);
-  tile.append(thumb, text);
+  body.append(type, heading, desc);
+  tile.append(thumbnailFor(project.videoId), play, body);
   tile.addEventListener("click", () => openVideo(project));
 
   return tile;
@@ -74,13 +79,7 @@ function initFilter(bar, grid, source) {
 
 export function initProjectGrids() {
   document.querySelectorAll("[data-project-grid]").forEach((grid) => {
-    const featured = projects.filter((p) => p.featured);
-    const lists = {
-      hero: featured.slice(0, 1),
-      featured: featured.slice(1),
-      all: projects,
-    };
-    const list = lists[grid.dataset.projectGrid] ?? projects;
+    const list = projects;
 
     render(grid, list);
 

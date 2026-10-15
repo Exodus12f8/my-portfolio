@@ -5,11 +5,17 @@ const usd = (amount) => `$${amount.toLocaleString("en-US")}`;
 
 function createPriceRow(plan) {
   const row = document.createElement("article");
-  row.className = "price-row" + (plan.popular ? " price-row--popular" : "");
+  row.className = "panel price-row" + (plan.popular ? " price-row--popular" : "");
 
   const head = document.createElement("div");
   const name = document.createElement("h3");
   name.textContent = plan.name;
+  if (plan.popular) {
+    const badge = document.createElement("span");
+    badge.className = "badge";
+    badge.textContent = "Most booked";
+    name.append(badge);
+  }
   const audience = document.createElement("p");
   audience.className = "price-for";
   audience.textContent = plan.for;

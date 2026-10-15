@@ -1,8 +1,8 @@
 // Every project shown on the site.
 // To swap a video, replace `videoId` with the ID from the YouTube link
 // (youtube.com/watch?v=THIS_PART or youtu.be/THIS_PART).
-// Projects with `featured: true` appear on the home page, in this order.
-// The first featured project is the big one at the top of the home page.
+// Featured projects cycle on the main menu's Work tile; the first one is
+// also the blurred background on every page.
 
 export const categories = ["Core systems", "Combat", "Admin tools"];
 
