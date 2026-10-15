@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work · ExodusF8</title>
+  <meta name="description" content="Roblox systems built by ExodusF8: gun frameworks, combat, movement, inventories and admin tools.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <script type="module" src="assets/js/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="./">ExodusF8</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="work.html" aria-current="page">Work</a>
+        <a href="pricing.html">Pricing</a>
+      </nav>
+      <a class="button" href="https://discord.com/users/1031300116944007218" target="_blank" rel="noopener">Hire me</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <h1>Work</h1>
+        <p>Systems I've built for Roblox games. Click any project to watch it running.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="filter-bar" data-project-filter="all-projects" role="group" aria-label="Filter projects"></div>
+        <div class="project-grid" data-project-grid="all" id="all-projects"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-cta">
+        <div>
+          <h2>Got a system in mind?</h2>
+          <p>Message @exodusf8 on Discord. I reply within 24 hours.</p>
+        </div>
+        <a class="button button-light" href="https://discord.com/users/1031300116944007218" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.249a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.249.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.369a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.009c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.891.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.029zM8.02 15.331c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.974 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+          Message me on Discord
+        </a>
+      </div>
+      <div class="footer-meta">
+        <p>© <span data-year>2026</span> ExodusF8</p>
+        <nav aria-label="Footer">
+          <a href="./">Home</a>
+          <a href="work.html">Work</a>
+          <a href="pricing.html">Pricing</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="video-dialog" aria-labelledby="video-title">
+    <div class="video-frame">
+      <iframe src="" title="Project video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+    </div>
+    <div class="video-info">
+      <div>
+        <h3 id="video-title" data-video-title></h3>
+        <p data-video-description></p>
+      </div>
+      <button class="video-close" type="button">Close</button>
+    </div>
+  </dialog>
+</body>
+</html>
