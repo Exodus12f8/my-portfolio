@@ -1,21 +1,14 @@
-import { initNav } from "./components/nav.js";
-import { initBackdrop, initWorkSlideshow } from "./components/menu.js";
-import { initVideoDialog } from "./components/video-dialog.js";
-import { initProjectGrids } from "./components/project-grid.js";
-import { initPricing } from "./components/pricing.js";
-import { plans } from "./data/pricing.js";
+import { initModal } from "./components/modal.js";
+import { renderRows } from "./components/rows.js";
+import { renderServices, renderPlans, renderFaq } from "./components/sections.js";
+import { initEstimator } from "./components/estimator.js";
+import { initNav, initReveal } from "./components/nav.js";
 
+initModal();
+renderRows();
+renderServices();
+renderPlans();
+renderFaq();
+initEstimator();
 initNav();
-initBackdrop();
-initWorkSlideshow();
-initVideoDialog();
-initProjectGrids();
-initPricing();
-
-document.querySelectorAll("[data-lowest-price]").forEach((el) => {
-  el.textContent = `£${Math.min(...plans.map((p) => p.gbp))}`;
-});
-
-document.querySelectorAll("[data-year]").forEach((el) => {
-  el.textContent = new Date().getFullYear();
-});
+initReveal();

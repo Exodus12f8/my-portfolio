@@ -1,0 +1,31 @@
+/* ───── NAV ───── */
+nav{
+  position:fixed;top:0;left:0;width:100%;z-index:60;
+  padding:0 var(--gutter);
+  transition:background .4s var(--ease),backdrop-filter .4s var(--ease);
+  background:linear-gradient(180deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,0) 100%);
+}
+nav.scrolled{background:rgba(8,8,8,.96);backdrop-filter:blur(6px);box-shadow:0 1px 0 var(--border)}
+.nav-inner{max-width:1500px;margin:0 auto;height:clamp(60px,8vw,76px);display:flex;align-items:center;gap:clamp(18px,3vw,40px)}
+.brand{font-family:'Anton',sans-serif;font-size:clamp(1.4rem,3vw,1.9rem);color:var(--red);letter-spacing:.06em;text-transform:uppercase;transition:transform .3s var(--ease)}
+.brand span{color:var(--fg)}
+.brand:hover{transform:scale(1.04)}
+.nav-links{display:none;gap:clamp(16px,2vw,26px);font-size:.86rem;font-weight:600;color:#cfcfcf}
+.nav-links a{position:relative;padding:4px 0;transition:color .2s var(--ease)}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav-links a:hover{color:#fff}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{margin-left:auto;display:none}
+@media(min-width:860px){.nav-links{display:flex}.nav-cta{display:inline-flex}}
+
+.nav-toggle{margin-left:auto;display:inline-flex;flex-direction:column;gap:5px;padding:10px;margin-right:-10px}
+.nav-toggle span{width:24px;height:2px;background:#fff;transition:transform .3s,opacity .2s}
+.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(min-width:860px){.nav-toggle{display:none}}
+.mobile-menu{position:fixed;inset:0 0 auto 0;background:rgba(8,8,8,.98);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);transform:translateY(-100%);transition:transform .35s var(--ease);z-index:55;padding:92px var(--gutter) 32px}
+.mobile-menu.open{transform:translateY(0)}
+.mobile-menu a{display:block;padding:16px 0;font-family:'Anton',sans-serif;font-size:1.25rem;letter-spacing:.05em;text-transform:uppercase;color:#d6d6d6;border-bottom:1px solid var(--border)}
+.mobile-menu a:hover{color:var(--red)}
+@media(min-width:860px){.mobile-menu{display:none}}

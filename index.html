@@ -1,69 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ExodusF8</title>
-  <meta name="description" content="ExodusF8, Roblox scripter. Gun frameworks, combat, UI and data systems. Message @exodusf8 on Discord.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/menu.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>ExodusF8 — Roblox Systems Studio</title>
+  <meta name="description" content="ExodusF8 — Roblox developer with 4+ years building combat systems, gun frameworks, custom UIs, backends and frameworks. PayPal & DevEx. DM @exodusf8 on Discord." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/nav.css" />
+  <link rel="stylesheet" href="assets/css/hero.css" />
+  <link rel="stylesheet" href="assets/css/catalog.css" />
+  <link rel="stylesheet" href="assets/css/pricing.css" />
+  <link rel="stylesheet" href="assets/css/faq.css" />
+  <link rel="stylesheet" href="assets/css/contact.css" />
+  <link rel="stylesheet" href="assets/css/modal.css" />
   <script type="module" src="assets/js/main.js"></script>
 </head>
 <body>
-  <div class="backdrop" aria-hidden="true"><div class="backdrop-image"></div></div>
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="brand">EXODUS<span>F8</span></a>
+      <div class="nav-links">
+        <a href="#catalog">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a href="#contact" class="btn-red nav-cta">Start a Project</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-  <header class="topbar">
-    <div class="container">
-      <a class="wordmark" href="./">ExodusF8</a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="topnav">Menu</button>
-      <nav class="topnav" id="topnav" aria-label="Main">
-        <a href="./" aria-current="page">Home</a>
-        <a href="work.html">Work</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="about.html">About</a>
-      </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#catalog">Projects</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Start a Project</a>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="hero-bg">
+      <img src="https://img.youtube.com/vi/G40qGEAJHQs/maxresdefault.jpg" alt="Featured project background" />
+    </div>
+    <div class="hero-content">
+      <div class="hero-inner reveal visible">
+        <div class="hero-tag">
+          <span class="nf">EXODUSF8</span>
+          <span class="dot"></span>
+          <span class="small">Roblox Systems Studio</span>
+        </div>
+        <h1 class="hero-title">EXODUS<span class="stroke">F8</span></h1>
+        <div class="hero-meta">
+          <span class="match">98% Match</span>
+          <span>2026</span>
+          <span class="pill">4+ Yrs Exp</span>
+          <span class="pill">Server-Validated</span>
+          <span class="pill">Anti-Exploit</span>
+        </div>
+        <p class="hero-desc">A Roblox engineer building complex, high-performance systems from the ground up — combat, gun frameworks, custom UIs and backends. Clean, optimized, built to scale.</p>
+        <div class="hero-btns">
+          <a href="#catalog" class="btn-play">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="5,3 19,12 5,21"/></svg>
+            View Projects
+          </a>
+          <a href="#pricing" class="btn-info">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+            See Pricing
+          </a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main>
-    <div class="container menu-screen">
-      <div class="title-card">
-        <h1 aria-label="ExodusF8"><span style="--i: 0">E</span><span style="--i: 1">X</span><span style="--i: 2">O</span><span style="--i: 3">D</span><span style="--i: 4">U</span><span style="--i: 5">S</span><span style="--i: 6">F</span><span style="--i: 7">8</span></h1>
-        <p>Roblox scripter</p>
+  <!-- TICKER -->
+  <div class="ticker reveal">
+    <div class="ticker-inner">
+      <div class="ticker-cell"><div class="ticker-num">4+</div><div class="ticker-label">Years Experience</div></div>
+      <div class="ticker-cell"><div class="ticker-num">30+</div><div class="ticker-label">Systems Shipped</div></div>
+      <div class="ticker-cell"><div class="ticker-num">£50<span style="font-size:.5em">+</span></div><div class="ticker-label">Starting Rate</div></div>
+      <div class="ticker-cell"><div class="ticker-num">24h</div><div class="ticker-label">Reply Window</div></div>
+    </div>
+  </div>
+
+  <!-- CATALOG / ROWS -->
+  <main id="catalog" class="rows-wrap">
+    <div class="row-head reveal" style="margin-bottom:6px">
+      <div>
+        <span class="kicker"><span class="bar"></span>The Catalog</span>
+        <h2 class="row-title" style="font-size:clamp(1.6rem,4vw,2.6rem)">PROJECTS &amp; <span class="accent">SHOWCASES</span></h2>
+      </div>
+    </div>
+    <div id="rows"></div>
+  </main>
+
+  <!-- SERVICES -->
+  <section id="services" class="section section-alt">
+    <div class="sec-wrap">
+      <div class="sec-head reveal">
+        <span class="kicker"><span class="bar"></span>Capabilities</span>
+        <h2 class="sec-title">SYSTEMS I <span class="stroke">BUILD</span></h2>
+        <p class="sec-desc">Six core disciplines, each delivered as clean, modular, server-validated code that drops into your game without breaking what already works.</p>
+      </div>
+      <div class="plans" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))" id="services-grid"></div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="section">
+    <div class="sec-wrap">
+      <div class="sec-head reveal">
+        <span class="kicker"><span class="bar"></span>Plans</span>
+        <h2 class="sec-title">PICK YOUR <span class="stroke">PLAN</span></h2>
+        <p class="sec-desc">Transparent tiers from single modules to full game builds. Every plan is server-validated, documented and delivered clean. Prices are starting points — scope sets the final quote.</p>
       </div>
 
-      <nav class="menu-grid" aria-label="Main menu">
-        <a class="tile tile--work" href="work.html" style="--i: 0">
-          <div class="tile-media" data-work-slideshow></div>
-          <h2 class="tile-label">Work</h2>
-          <p class="tile-text">Gun frameworks, combat, inventories and more. Watch them running.</p>
-        </a>
-        <a class="tile tile--pricing" href="pricing.html" style="--i: 1">
-          <h2 class="tile-label">Pricing</h2>
-          <p class="tile-text">Jobs start <span class="tile-price">from <span data-lowest-price>£40</span></span>. Try the price estimator.</p>
-        </a>
-        <a class="tile tile--about" href="about.html" style="--i: 2">
-          <h2 class="tile-label">About</h2>
-          <p class="tile-text">What I build and how hiring me works.</p>
-        </a>
-        <a class="tile tile--discord" href="https://discord.com/users/1031300116944007218" target="_blank" rel="noopener" style="--i: 3">
-          <span class="tile-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.249a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.249.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.369a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.009c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.891.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.029zM8.02 15.331c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.974 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></span>
-          <h2 class="tile-label">Hire me</h2>
-          <p class="tile-text">@exodusf8 on Discord</p>
-        </a>
-      </nav>
+      <div class="plans" id="plans"></div>
 
-      <ul class="menu-meta" role="list">
-        <li><strong>4+ years</strong> scripting on Roblox</li>
-        <li><strong>30+</strong> systems delivered</li>
-        <li>Replies within <strong>24 hours</strong></li>
-      </ul>
+      <!-- ESTIMATOR -->
+      <div class="estimator reveal">
+        <div class="est-head">
+          <div>
+            <h3>Build Your Quote</h3>
+            <p>Slide the scope and pick a system type to get a ballpark estimate instantly. Final price confirmed after a quick chat.</p>
+          </div>
+        </div>
+        <div class="est-grid">
+          <div class="est-controls">
+            <div class="est-field">
+              <label>System Type <span class="val" id="type-val">Standard System</span></label>
+              <div class="est-chips" id="type-chips"></div>
+            </div>
+            <div class="est-field">
+              <label>Complexity / Scope <span class="val" id="scope-val">Medium</span></label>
+              <input type="range" id="scope" min="1" max="7" step="1" value="3" />
+            </div>
+          </div>
+          <div class="est-result">
+            <div class="lbl">Estimated From</div>
+            <div class="est-amt"><span class="cur">£</span><span id="est-gbp">0</span><span class="plus" style="color:var(--muted);font-size:.4em">+</span></div>
+            <div class="est-usd">≈ $<span id="est-usd">0</span> USD</div>
+            <a href="#contact" class="btn-red" style="width:100%">Lock This In →</a>
+            <div class="est-note" style="margin-top:14px">Indicative only · PayPal &amp; DevEx accepted</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="specs reveal">
+        <div class="spec"><div class="k">Currency</div><div class="v">GBP / USD</div></div>
+        <div class="spec"><div class="k">Payment</div><div class="v r">PayPal · DevEx</div></div>
+        <div class="spec"><div class="k">Terms</div><div class="v">Deposit + Final</div></div>
+        <div class="spec"><div class="k">Revisions</div><div class="v">Included</div></div>
+      </div>
     </div>
-  </main>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section section-alt">
+    <div class="sec-wrap" style="max-width:980px">
+      <div class="sec-head reveal">
+        <span class="kicker"><span class="bar"></span>Briefing</span>
+        <h2 class="sec-title">FA<span class="stroke">Q</span></h2>
+      </div>
+      <div class="faq reveal" id="faq-list"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <div class="contact-wrap">
+      <div class="reveal">
+        <span class="kicker" style="justify-content:center"><span class="bar"></span>Comms Channel</span>
+        <h2 class="sec-title" style="text-align:center">LET'S <span class="stroke">BUILD</span></h2>
+        <p class="contact-desc">Drop a DM with what you need built, your budget range and your deadline. Detailed briefs get quoted fastest — vague "you free?" messages get skipped.</p>
+        <a class="copy-btn" id="copy-btn" href="https://discord.com/users/1031300116944007218" target="_blank" rel="noopener">
+          <svg class="dc" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.249a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.249.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.369a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.009c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.891.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.029zM8.02 15.331c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.974 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+          </svg>
+          <span class="handle">@EXODUSF8</span>
+          <span class="cl">Open Profile</span>
+        </a>
+        <div class="contact-rules">
+          <div class="rule"><div class="n">01</div><div class="t">Describe the system you need built</div></div>
+          <div class="rule"><div class="n">02</div><div class="t">Share your budget range</div></div>
+          <div class="rule"><div class="n">03</div><div class="t">Give a realistic deadline</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">EXODUS<span>F8</span></div>
+      <div class="footer-meta">Roblox Developer · Systems · Frameworks · © 2026</div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-card">
+      <div class="modal-vid">
+        <button class="modal-close" id="modal-close" aria-label="Close">
+          <svg viewBox="0 0 24 24"><path d="M18.3 5.71 12 12.01l-6.3-6.3-1.41 1.41 6.3 6.3-6.3 6.3 1.41 1.41 6.3-6.3 6.3 6.3 1.41-1.41-6.3-6.3 6.3-6.3z"/></svg>
+        </button>
+        <iframe id="modal-iframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="modal-body">
+        <span class="mtag" id="modal-tag"></span>
+        <h3 id="modal-title"></h3>
+        <p id="modal-desc"></p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

@@ -1,0 +1,15 @@
+/* ───── FAQ ───── */
+.faq{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--panel);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .3s var(--ease),background .3s var(--ease)}
+.faq-item[open]{border-color:#3a3a3a;background:var(--panel-2)}
+.faq-item summary{list-style:none;cursor:pointer;padding:clamp(18px,2.4vw,26px);display:flex;align-items:center;justify-content:space-between;gap:18px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-q{font-family:'Anton',sans-serif;font-size:clamp(1.05rem,2vw,1.4rem);text-transform:uppercase;letter-spacing:.02em;transition:color .2s var(--ease)}
+.faq-item summary:hover .faq-q,.faq-item[open] .faq-q{color:var(--red)}
+.faq-plus{flex-shrink:0;width:30px;height:30px;position:relative;transition:transform .35s var(--ease)}
+.faq-plus::before,.faq-plus::after{content:"";position:absolute;background:var(--red);border-radius:2px}
+.faq-plus::before{top:50%;left:4px;right:4px;height:2.5px;transform:translateY(-50%)}
+.faq-plus::after{left:50%;top:4px;bottom:4px;width:2.5px;transform:translateX(-50%);transition:transform .35s var(--ease)}
+.faq-item[open] .faq-plus{transform:rotate(90deg)}
+.faq-item[open] .faq-plus::after{transform:translateX(-50%) scaleY(0)}
+.faq-a{padding:0 clamp(18px,2.4vw,26px) clamp(20px,2.8vw,28px);color:var(--muted);font-size:clamp(.92rem,1.4vw,1.05rem);line-height:1.7;max-width:760px}

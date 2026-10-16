@@ -1,58 +1,24 @@
-// Every project shown on the site.
-// To swap a video, replace `videoId` with the ID from the YouTube link
-// (youtube.com/watch?v=THIS_PART or youtu.be/THIS_PART).
-// Featured projects cycle on the main menu's Work tile; the first one is
-// also the blurred background on every page.
+// Each key is a row on the site. To swap a video, replace `id` with the part
+// after "watch?v=" in the YouTube link. Thumbnails load from YouTube.
 
-export const categories = ["Core systems", "Combat", "Admin tools"];
+export const WORK = {
+  "Core Systems": [
+    { id: "T_odMpCE69g", title: "Inventory System", tag: "System", desc: "Categorised inventory — each slot is type-locked so shirts go in shirt slots, weapons in weapon slots, etc. Full drag-and-drop with validation." },
+    { id: "Qbl2wr_xLnw", title: "Movement System", tag: "System", desc: "Smooth animations with camera bobbing, a first-person view model and buttery shiftlock." },
+    { id: "KZaGAI2Krtg", title: "Vault System", tag: "System", desc: "Clean vault-over-walls mechanic with configurable vault height and speed." },
+    { id: "y8DnUTPBamI", title: "Catalog Avatar Creator System", tag: "System", desc: "Catalog Avatar Creator style marketplace — browse items by category, inspect and equip them on your avatar, save outfits and switch between R6 and R15." }
+  ],
+  "Combat & Abilities": [
+    { id: "G40qGEAJHQs", title: "Gun Framework", tag: "Framework", desc: "Modular gun framework with server-validated firing, recoil, spread, reload states and per-weapon configs. Drop new guns in without touching core logic." },
+    { id: "7oXFKr7aSWY", title: "Projectile System", tag: "Ability", desc: "Fireball projectile ability with custom VFX, server-validated hit detection and impact effects on contact." }
+  ],
+  "Admin & Tools": [
+    { id: "H1m-YQsI29w", title: "CMDR — Global Messages", tag: "Admin", desc: "Custom CMDR command broadcasting global messages to every server via MessagingService. Supports formatting and admin-level permissions." }
+  ]
+};
 
-export const projects = [
-  {
-    title: "Gun framework",
-    category: "Combat",
-    videoId: "UsqTtrUZg1A",
-    featured: true,
-    description:
-      "Server-validated firing, recoil, spread and reload states, with a config per weapon. New guns drop in without touching the core code.",
-  },
-  {
-    title: "Inventory system",
-    category: "Core systems",
-    videoId: "T_odMpCE69g",
-    featured: true,
-    description:
-      "Categorised slots that only accept the right item type, with drag and drop checked on the server.",
-  },
-  {
-    title: "Movement system",
-    category: "Core systems",
-    videoId: "Qbl2wr_xLnw",
-    featured: true,
-    description:
-      "Smooth movement animations, camera bob, a first-person view model and shift lock.",
-  },
-  {
-    title: "Fireball projectile",
-    category: "Combat",
-    videoId: "7oXFKr7aSWY",
-    featured: true,
-    description:
-      "A projectile ability with custom effects, server-side hit detection and impact effects.",
-  },
-  {
-    title: "Vault system",
-    category: "Core systems",
-    videoId: "KZaGAI2Krtg",
-    featured: true,
-    description:
-      "Vault over walls and ledges, with adjustable vault height and speed.",
-  },
-  {
-    title: "Cmdr global messages",
-    category: "Admin tools",
-    videoId: "H1m-YQsI29w",
-    featured: false,
-    description:
-      "A Cmdr command that sends a message to every live server through MessagingService, limited to admins.",
-  },
-];
+export const ROW_SUBS = {
+  "Core Systems": "Inventory · movement · mechanics",
+  "Combat & Abilities": "Guns · VFX · server-validated hitboxes",
+  "Admin & Tools": "Moderation · anti-exploit · commands"
+};

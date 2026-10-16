@@ -1,42 +1,41 @@
 # my-portfolio
 
-Portfolio site for ExodusF8, a Roblox systems programmer. Plain HTML, CSS and JavaScript with no build step.
+Portfolio site for ExodusF8, a Roblox developer. Plain HTML, CSS and JavaScript with no build step.
 
 ## Structure
 
 ```
-index.html            Main menu
-work.html             All projects, with category filter
-pricing.html          Price list, estimator, payment terms and FAQ
-about.html            What I build and how hiring works
+index.html                  Page markup
 assets/
   css/
-    base.css          Colours, type scale and resets
-    layout.css        Header, footer, hero and page sections
-    components.css    Buttons, project tiles, video player, pricing, FAQ
-    menu.css          Main menu screen and its tiles
+    base.css                Colours, resets, buttons, scroll reveal
+    nav.css                 Top bar and mobile menu
+    hero.css                Hero banner and stat ticker
+    catalog.css             Project rows and cards
+    pricing.css             Services, plans, quote estimator, specs
+    faq.css                 FAQ
+    contact.css             Contact section and footer
+    modal.css               Video pop-up
   js/
-    main.js           Starts everything on each page
+    main.js                 Starts everything
     data/
-      projects.js     Project list and YouTube video IDs
-      pricing.js      Plans, prices and estimator sizes
-    components/       Nav, menu, project grid, video player and pricing code
+      projects.js           Project rows and YouTube video IDs
+      content.js            Services, plans/prices and FAQ
+    components/             Code that renders each section
 ```
 
 ## Common edits
 
-**Swap a video:** open `assets/js/data/projects.js` and replace the project's `videoId` with the ID from its YouTube link (the part after `watch?v=`). Thumbnails come from YouTube automatically.
+**Swap or add a video:** edit `assets/js/data/projects.js`. The `id` is the part after `watch?v=` in the YouTube link. Each key (Core Systems, Combat & Abilities, ...) is a row.
 
-**Add a project:** copy one of the entries in `projects.js` and change its details. Set `featured: true` to include it in the main menu's Work slideshow; the first featured project is also the blurred background on every page.
+**Hero background:** the image at the top uses the gun framework video's thumbnail. Change the video ID in the `hero-bg` image in `index.html`.
 
-**Change prices:** edit the `gbp` values in `assets/js/data/pricing.js`. The price list, the estimator and the "from £…" on the main menu all update from there.
+**Change prices:** edit `PLANS` in `assets/js/data/content.js`. The quote estimator uses the same prices.
 
 ## Running locally
 
-The scripts are ES modules, so open the site through a local server rather than double-clicking the file:
+The scripts are ES modules, so open the site through a local server:
 
 ```
 python -m http.server
 ```
-
-Then visit http://localhost:8000.
