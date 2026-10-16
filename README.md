@@ -28,7 +28,7 @@ assets/
 
 **Swap or add a video:** edit `assets/js/data/projects.js`. The `id` is the part after `watch?v=` in the YouTube link. Each key (Core Systems, Combat & Abilities, ...) is a row.
 
-**Hero background:** the top of the page plays the gun framework video muted on a loop, with its thumbnail showing while it loads. To change it, swap the video ID in both the `hero-bg` image and the `data-video-id` on `hero-video` in `index.html`.
+**Hero background:** the image at the top uses the gun framework video's thumbnail. Change the video ID in the `hero-bg` image in `index.html`.
 
 **Change prices:** edit `PLANS` in `assets/js/data/content.js`. The quote estimator uses the same prices.
 

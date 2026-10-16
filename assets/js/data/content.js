@@ -21,5 +21,5 @@ export const FAQ = [
   { q: "How does payment work?", a: "PayPal only (GBP or USD), with Robux via DevEx rates currently accepted too. Small modules are paid on completion. Larger systems require a 30–50% non-refundable deposit before work begins, with the remainder due on delivery." },
   { q: "What should I include when I DM?", a: "What you need built, your budget range, and your deadline. \"Hey are you free?\" with no other info gets skipped. The more detail you give upfront, the faster you get a quote." },
   { q: "How long do projects take?", a: "Modules can turn around in a day or two. Standard systems usually take a few days; complex builds and full experiences are scheduled with a clear timeline before we start." },
-  { q: "Do you do long-term work?", a: "Yes — retainers and ongoing work are considered for live experiences, ideally 1k+ CCU. Reach out with your game and what you're scaling toward." }
+  { q: "Do you do long-term work?", a: "Yes, as long as it's decently paid. Reach out with your game, what you need and your budget." }
 ];
